@@ -6,6 +6,9 @@ from pyrogram import filters
 
 load_dotenv()
 
+#optional
+SET_CMDS = getenv("SET_CMDS", "True")
+
 # Get this value from my.telegram.org/apps
 API_ID = int(getenv("API_ID"))
 API_HASH = getenv("API_HASH")
