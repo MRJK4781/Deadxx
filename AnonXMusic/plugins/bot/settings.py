@@ -6,7 +6,7 @@ from pyrogram.types import (
     CallbackQuery,
     InlineKeyboardButton,
     InlineKeyboardMarkup,
-    Message, InputMediaPhoto, InputMediaVideo
+    Message, InputMediaPhoto, InputMediaVideo, InputMediaPhoto
 )
 
 from AnonXMusic import app
