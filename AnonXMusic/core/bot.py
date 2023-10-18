@@ -42,12 +42,10 @@ class Anony(Client):
                 f"Bot has failed to access the log group/channel.\n  Reason : {type(ex).__name__}."
             )
             exit()
-            
-            if config.SET_CMDS == str(True):
+        if config.SET_CMDS == str(True):
             try:
                 await self.set_bot_commands(
                     [
-                        BotCommand("start", "Starts The Bot"),
                         BotCommand("ping", "Check that bot is alive or dead"),
                         BotCommand("play", "Starts playing the requested song"),
                         BotCommand("skip", "Moves to the next track in queue"),
@@ -61,6 +59,8 @@ class Anony(Client):
                     )
             except:
                 pass
+        else:
+            pass
 
         a = await self.get_chat_member(config.LOGGER_ID, self.id)
         if a.status != ChatMemberStatus.ADMINISTRATOR:
