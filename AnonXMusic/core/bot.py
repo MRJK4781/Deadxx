@@ -42,6 +42,8 @@ class Anony(Client):
                 f"Bot has failed to access the log group/channel.\n  Reason : {type(ex).__name__}."
             )
             exit()
+            
+            if config.SET_CMDS == str(True):
             try:
                 await self.set_bot_commands(
                     [
