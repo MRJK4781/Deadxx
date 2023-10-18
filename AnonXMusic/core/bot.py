@@ -46,6 +46,7 @@ class Anony(Client):
             try:
                 await self.set_bot_commands(
                     [
+                        BotCommand("start", "Starts the bot"),
                         BotCommand("ping", "Check that bot is alive or dead"),
                         BotCommand("play", "Starts playing the requested song"),
                         BotCommand("skip", "Moves to the next track in queue"),
