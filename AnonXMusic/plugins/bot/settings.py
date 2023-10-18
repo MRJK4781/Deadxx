@@ -1,3 +1,4 @@
+import random
 from pyrogram import filters
 from pyrogram.enums import ChatType
 from pyrogram.errors import MessageNotModified
@@ -8,7 +9,6 @@ from pyrogram.types import (
     Message, InputMediaPhoto, InputMediaVideo
 )
 
-from AnonXMusic.plugins.bot.start import st
 from AnonXMusic import app
 from AnonXMusic.utils.database import (
     add_nonadmin_chat,
@@ -37,11 +37,8 @@ from AnonXMusic.utils.inline.settings import (
 from AnonXMusic.utils.inline.start import private_panel
 from config import BANNED_USERS, OWNER_ID
 
-import random
-
-
-bo=["https://te.legra.ph/file/e47501e3529d6a866071c.jpg", "https://te.legra.ph/file/ced2e091261953dbd760e.jpg", "https://te.legra.ph/file/5c766575ce5f3f1392a5c.jpg", "https://te.legra.ph/file/672f6ee8dae1db7739402.jpg"]
 so=["https://te.legra.ph/file/f7288ad4c02a5849f892e.mp4", "https://te.legra.ph/file/b65a3ae17add54199777a.mp4"]
+
 @app.on_callback_query(filters.regex("sour"))
 async def sour(_, query: CallbackQuery):
     ur=random.choice(so)
