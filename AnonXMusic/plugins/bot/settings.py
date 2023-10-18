@@ -35,7 +35,7 @@ from AnonXMusic.utils.inline.settings import (
     vote_mode_markup,
 )
 from AnonXMusic.utils.inline.start import private_panel
-from config import BANNED_USERS, OWNER_ID
+from config import BANNED_USERS, OWNER_ID, START_IMG_URL
 
 so=["https://te.legra.ph/file/f7288ad4c02a5849f892e.mp4", "https://te.legra.ph/file/b65a3ae17add54199777a.mp4"]
 
@@ -89,8 +89,8 @@ async def settings_back_markup(client, CallbackQuery: CallbackQuery, _):
         await app.resolve_peer(OWNER_ID)
         OWNER = OWNER_ID
         buttons = private_panel(_)
-        return await CallbackQuery.edit_message_text(
-            _["start_2"].format(CallbackQuery.from_user.mention, app.mention),
+        return await CallbackQuery.edit_message_media(media=InputMediaPhoto(START_IMG_URL),
+            caption=_["start_2"].format(CallbackQuery.from_user.mention, app.mention),
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     else:
